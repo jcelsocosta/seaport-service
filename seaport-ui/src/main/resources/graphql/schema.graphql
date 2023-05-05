@@ -1,0 +1,16 @@
+type Container {
+    id: ID!
+    client: String!
+    numberContainer: String!
+    type: Int!
+    status: String!
+    category: String!
+}
+
+type Query {
+    listContainers(): [Container]
+}
+
+type Mutation {
+    createContainer(numberContainer: String!): Container
+}
