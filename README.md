@@ -8,8 +8,8 @@ Requisitos Funcionais
 
 Requisitos Não Funcionais:
 - O servidor deve ser implementado em Java
-- Precisa banco de dados relacional
-- Precisa usar React.js com typescrpit para o frontend
+- Deve-se usar postgres para um banco de dados relacional
+- Deve-se usar React.js com typescrpit para o frontend
 
 Regras de Negócio:
 - O númedo do contêiner precisa ser único e deve seguir o seguinte formato (4 letras e 7 números. Ex: ABCD1234567)
