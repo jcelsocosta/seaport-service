@@ -4,7 +4,7 @@ Objetivo: Criar e gerenciar a movimentação de contêineres, simulando operaç�
 
 Requisitos Funcionais
 - O operador pode cadastrar, atualizar, deletar e visualizar um ou mais contêineres.
-- O operador pode cadastrar, atualizar, deletar e visualizar um ou mais movimentações dos contêiners.
+- O operador pode cadastrar, atualizar, deletar e visualizar um ou mais movimentações dos contêineres.
 
 Requisitos Não Funcionais:
 - O servidor deve ser implementado em Java
