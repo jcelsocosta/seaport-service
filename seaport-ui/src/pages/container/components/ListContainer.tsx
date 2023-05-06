@@ -6,7 +6,6 @@ import EditContainer from './EditContainer'
 import DeleteContainer from './DeleteContainer'
 import FilterContainer from './FilterContainer'
 import { ContainerType } from "../../../_ui/Container/ContainerType"
-import OrderSelect from "@/components/container/order/Order"
 
 export default function ListContainer() {
     const [containers, setContainers] = useState([])
@@ -84,9 +83,6 @@ export default function ListContainer() {
                     <div className="col-sm d-flex justify-content-end align-bottom">
                         <span style={{cursor: 'pointer', fontSize: '25px'}} onClick={() => handleClickFilter()}>
                             <BsFilter />
-                        </span>
-                        <span className="ms-4">
-                            <OrderSelect />
                         </span>
                     </div>
                 </div>

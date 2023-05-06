@@ -98,6 +98,12 @@ export default function EditMovement(props: EditMovementProps) {
             return 'A data final é inválida.'
         }
 
+        const prevDate = new Date(dateInitial)
+
+        const nextDate = new Date(dateFinal)
+
+        if (nextDate < prevDate) return 'A data final não pode ser menor a data inicial.'
+
         return null
     }
 

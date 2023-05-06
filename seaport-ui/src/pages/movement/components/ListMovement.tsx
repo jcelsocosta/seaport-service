@@ -3,7 +3,6 @@ import { BsPencilSquare, BsTrash, BsFilter } from "react-icons/bs"
 
 import EditMovement from './EditMovement'
 import { MovementType } from "../../../_ui/Movement/MovementType"
-import OrderSelect from "@/components/container/order/Order"
 import DeleteMovement from "./DeleteMovement"
 import FilterMovement from "./FilterMovement"
 import moment from 'moment'
@@ -85,9 +84,6 @@ export default function ListMovement() {
                     <div className="col-sm d-flex justify-content-end align-bottom">
                         <span style={{cursor: 'pointer', fontSize: '25px'}} onClick={() => handleClickFilter()}>
                             <BsFilter />
-                        </span>
-                        <span className="ms-4">
-                            <OrderSelect />
                         </span>
                     </div>
                 </div>
