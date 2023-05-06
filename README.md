@@ -28,3 +28,4 @@ docker-compose up -d
 # caso precise recriar as imagens execute o comando abaixo
 docker-compose up --build --force-recreate
 ```
+Acesse localhost:3000
