@@ -2,9 +2,9 @@ import TypeSelect from "@/components/movement/type/Type"
 import ContainerSelect from "@/components/container/container/Container"
 import Head from "next/head"
 import { useState, useEffect } from 'react'
-import { MovementType } from "./MovementType"
-import { updateMovement } from "./MovementController"
+import { MovementType } from "../../../_ui/Movement/MovementType"
 import { checkStringEmpty } from "@/components/common/validate"
+import { updateMovement } from "@/_ui/Movement/MovementController"
 
 interface EditMovementProps {
     componentRender: boolean

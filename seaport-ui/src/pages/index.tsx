@@ -1,39 +1,7 @@
-import { Inter } from '@next/font/google'
 import Head from 'next/head'
-import { useState } from 'react'
-import Container from './container'
-import Movement from './movement'
-import Report from './report'
 import NavBar from '@/components/navbar/NavBar'
 
-const inter = Inter({ subsets: ['latin'] })
-
 export default function Home() {
-    const [showContainer, setShowContainer] = useState<boolean>(true)
-    const [showMovement, setShowMovement] = useState<boolean>(false)
-    const [showReport, setShowReport] = useState<boolean>(false)
-
-    function showComponentContainer() {
-        clearFields()
-        setShowContainer(!showContainer)
-    }
-
-    function showComponentMovement() {
-        clearFields()
-        setShowMovement(!showMovement)
-    }
-
-    function showComponentReport() {
-        clearFields()
-        setShowReport(!showReport)
-    }
-
-    function clearFields() {
-        setShowContainer(false)
-        setShowMovement(false)
-        setShowReport(false)
-    }
-
     return (
         <>
             <Head>

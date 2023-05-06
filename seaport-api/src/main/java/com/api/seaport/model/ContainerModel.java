@@ -15,7 +15,7 @@ import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "containers", schema = "register")
+@Table(name = "containers")
 public class ContainerModel {
     private static final long serialVersionUUID = 1L;
 

@@ -1,10 +1,10 @@
 import CategorySelect from "@/components/container/category/Category";
 import StatusSelectComponent from "@/components/container/status/Status";
 import TypeSelect from "@/components/container/type/Type";
+import controller from "@/_ui/Container/ContainerController";
+import { ContainerType } from "@/_ui/Container/ContainerType";
 import Head from "next/head";
 import { useState, useEffect } from 'react'
-import { ContainerType } from "./ContainerType";
-import { updateContainer } from "./ContainerController";
 
 interface EditContainerProps {
     componentRender: boolean
@@ -19,9 +19,6 @@ export default function EditContainer(props: EditContainerProps) {
     const [typeSelect, setTypeSelect] = useState('')
     const [statusSelect, setStatusSelect] = useState('')
     const [categorySelect, setCategorySelect] = useState('')
-    const [componentRenderType, setComponentRenderType] = useState(false)
-    const [componentRenderStatus, setComponentRenderStatus] = useState(false)
-    const [componentRenderCategory, setComponentRenderCategory] = useState(false)
 
     useEffect(() => {
         if (Object.keys(props.container).length > 0) {
@@ -48,10 +45,6 @@ export default function EditContainer(props: EditContainerProps) {
         props.handleFlagContainer()
     }
 
-    function clearFields() {
-        setComponentRenderStatus(false)
-    }
-
     function handleTypeSelect(value: any) {
         setTypeSelect(value)
     }
@@ -73,7 +66,7 @@ export default function EditContainer(props: EditContainerProps) {
             status: statusSelect,
             category: categorySelect
         }
-        await updateContainer(params)
+        await controller.updateContainer(params)
 
         handleCloseModal()
     }
@@ -101,9 +94,10 @@ export default function EditContainer(props: EditContainerProps) {
                                 </div>
                                 <div className="col-sm-6">
                                     <input className="form-control"
-                                        placeholder="Número do contêiner"
+                                        placeholder="Número do contêiner ex:1234ABCDEF"
                                         value={numberContainer}
-                                        onChange={(e) => setNumberContainer(e.target.value)}
+                                        maxLength={11}
+                                        onChange={(e) => setNumberContainer((e.target.value).toLocaleUpperCase())}
                                         >
                                     </input>
                                 </div>

@@ -1,9 +1,9 @@
 import TypeSelect from "@/components/movement/type/Type"
 import Head from "next/head"
-import { createMovement } from './MovementController'
 import { useState } from "react"
 import { checkStringEmpty } from "@/components/common/validate"
 import ContainerSelect from "@/components/container/container/Container"
+import { createMovement } from "@/_ui/Movement/MovementController"
 
 interface CreateContainerProps {
     toGoBack: () => void

@@ -1,5 +1,5 @@
+import { deleteMovement } from "@/_ui/Movement/MovementController";
 import Head from "next/head";
-import { deleteMovement } from "./MovementController";
 
 interface DeleteMovementProps {
     movementID: string

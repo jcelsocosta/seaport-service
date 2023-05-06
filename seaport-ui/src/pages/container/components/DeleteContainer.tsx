@@ -1,5 +1,5 @@
+import controller from "@/_ui/Container/ContainerController";
 import Head from "next/head";
-import { deleteContainer } from "./ContainerController";
 
 interface DeleteContainerProps {
     containerID: string
@@ -25,7 +25,7 @@ export default function DeleteContainer(props: DeleteContainerProps) {
             id: props.containerID
         }
 
-        await deleteContainer(params)
+        await controller.deleteContainer(params)
 
         handleCloseModal()
 

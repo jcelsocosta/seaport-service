@@ -2,7 +2,6 @@ import CategorySelect from "@/components/container/category/Category";
 import StatusSelect from "@/components/container/status/Status";
 import TypeSelect from "@/components/container/type/Type";
 import Head from "next/head";
-import { type } from "os";
 import { useState } from "react";
 
 interface FilterContainerProps {

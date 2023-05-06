@@ -1,6 +1,6 @@
-import { useEffect, useRef, useState } from 'react'
+import { ContainerType } from '@/_ui/Container/ContainerType'
+import { useEffect, useState } from 'react'
 import { listContainers } from './ContainerController'
-import { ContainerType } from '@/pages/container/components/ContainerType'
 
 interface ContainerSelectType {
     initialValueSelected?: string

@@ -1,8 +1,4 @@
-interface OrderSelectProps {
-    handleOrderSelect?: (value: any) => void
-}
-
-export default function OrderSelect(props: OrderSelectProps) {
+export default function OrderSelect() {
     const categories = [
         ['Selecione uma ordenação', undefined],
         ['Mais recentes', 'createdAt', 'ASC'],

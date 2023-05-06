@@ -1,11 +1,8 @@
 import { useState } from 'react'
-import { Inter } from '@next/font/google'
 import Head from 'next/head'
 import ListContainer from './components/ListMovement'
 import CreateContainer from './components/CreateMovement'
 import NavBar from '@/components/navbar/NavBar'
-
-const inter = Inter({ subsets: ['latin'] })
 
 export default function Movement() {
     const [showCreateComponent, setShowCreateComponent] = useState<boolean>(false)

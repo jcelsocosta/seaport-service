@@ -1,14 +1,13 @@
 import { useState, useEffect, useRef } from "react"
 import { BsPencilSquare, BsTrash, BsFilter } from "react-icons/bs"
 
-import { listMovementsByFilter, listMovements } from './MovementController'
 import EditMovement from './EditMovement'
-import FilterMoviment from './FilterMovement'
-import { MovementType } from "./MovementType"
+import { MovementType } from "../../../_ui/Movement/MovementType"
 import OrderSelect from "@/components/container/order/Order"
 import DeleteMovement from "./DeleteMovement"
 import FilterMovement from "./FilterMovement"
 import moment from 'moment'
+import { listMovements, listMovementsByFilter } from "@/_ui/Movement/MovementController"
 
 export default function ListMovement() {
     const [movements, setMovements] = useState([])
@@ -76,10 +75,6 @@ export default function ListMovement() {
         setComponentRender(false)
     }
 
-
-    function clearFields() {
-        setMovements([])
-    }
     return (
         <>
             <div className='container'>

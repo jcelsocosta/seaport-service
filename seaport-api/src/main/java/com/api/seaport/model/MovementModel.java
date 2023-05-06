@@ -15,7 +15,7 @@ import jakarta.persistence.Table;
 
 
 @Entity
-@Table(name = "movements", schema = "register")
+@Table(name = "movements")
 public class MovementModel {
     private static final long serialVersionUUID = 1L;
 

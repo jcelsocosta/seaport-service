@@ -2,9 +2,9 @@ import CategorySelect from "@/components/container/category/Category";
 import StatusSelect from "@/components/container/status/Status";
 import TypeSelect from "@/components/container/type/Type";
 import Head from "next/head";
-import { createContainer } from './ContainerController'
-import { useRef, useState } from "react";
+import { useState } from "react";
 import { checkNumberEmpty, checkStringEmpty } from "@/components/common/validate";
+import controller from "@/_ui/Container/ContainerController";
 
 interface CreateContainerProps {
     toGoBack: () => void
@@ -29,7 +29,7 @@ export default function CreateContainer(props: CreateContainerProps) {
                     status: statusSelect,
                     category: categorySelect
                 }
-                await createContainer(params)
+                await controller.createContainer(params)
         
                 props.toGoBack()
             } else {
@@ -111,8 +111,9 @@ export default function CreateContainer(props: CreateContainerProps) {
                     </div>
                     <div className="col-sm-6">
                         <input className="form-control"
-                            placeholder="Número do contêiner"
-                            onChange={(e) => setNumberContainer(e.target.value)}>
+                            placeholder="Número do contêiner ex:1234ABCDEF"
+                            maxLength={11}
+                            onChange={(e) => setNumberContainer((e.target.value).toUpperCase())}>
                         </input> 
                     </div>
                 </div>

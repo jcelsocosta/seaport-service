@@ -1,11 +1,11 @@
 import { useState, useEffect, useRef } from "react"
-import { BsPencilSquare, BsTrash, BsFilter, BsArrowDownUp } from "react-icons/bs"
+import { BsPencilSquare, BsTrash, BsFilter } from "react-icons/bs"
 
-import { listContainersByFilter, listContainersPagination } from './ContainerController'
+import controller from '../../../_ui/Container/ContainerController'
 import EditContainer from './EditContainer'
 import DeleteContainer from './DeleteContainer'
 import FilterContainer from './FilterContainer'
-import { ContainerType } from "./ContainerType"
+import { ContainerType } from "../../../_ui/Container/ContainerType"
 import OrderSelect from "@/components/container/order/Order"
 
 export default function ListContainer() {
@@ -20,7 +20,7 @@ export default function ListContainer() {
     }, [])
 
     async function init() {
-        const response = await listContainersPagination()
+        const response = await controller.listContainersPagination()
         setContainers(response)
     }
 
@@ -63,21 +63,17 @@ export default function ListContainer() {
     }
 
     async function handleFilterContainer(filter: any) {
-        const data = await listContainersByFilter(filter)
+        const data = await controller.listContainersByFilter(filter)
         setContainers(data)
     }
 
     async function handleFlagContainer() {
-        const response = await listContainersPagination()
+        const response = await controller.listContainersPagination()
         setContainers(response)
 
         setComponentRender(false)
     }
 
-
-    function clearFields() {
-        setContainers([])
-    }
     return (
         <>
             <div className='container'>

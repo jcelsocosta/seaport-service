@@ -1,11 +1,7 @@
-import { useState } from 'react'
-import { Inter } from '@next/font/google'
 import Head from 'next/head'
 import NavBar from '@/components/navbar/NavBar'
-import ListReportContainer from './component/ListReportContainer'
-import ListReportMovement from './component/ListReportMovement'
-
-const inter = Inter({ subsets: ['latin'] })
+import ListReportContainer from './components/ListReportContainer'
+import ListReportMovement from './components/ListReportMovement'
 
 export default function Report() {
     return (

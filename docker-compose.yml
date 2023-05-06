@@ -1,0 +1,46 @@
+version: '3'
+
+networks:
+  common_network:
+
+services:
+  postgres:
+    image: postgres:14
+    restart: always
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 123456
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    networks:
+      - common_network
+
+  seaport-api:
+    build:
+      context: ./seaport-api
+      dockerfile: Dockerfile
+    depends_on:
+      - postgres
+    ports:
+      - 4000:4000
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/postgres
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: 123456
+    networks:
+      - common_network
+
+  seaport-ui:
+    build:
+      context: ./seaport-ui
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - 3000:3000
+    networks:
+      - common_network
+
+volumes:
+  pgdata:
