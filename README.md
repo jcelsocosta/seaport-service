@@ -16,3 +16,15 @@ Regras de Negócio:
 - O tipo de contêiner pode ser apenas dois. (20/40)
 - A categoria do contêiner pode ser importação/exportação
 - O tipo de movimentação precisa ser embarque, descarga, gate in, gate out, reposicionamento, pesagem ou scanner
+
+## Inicializando o projeto
+
+Para executar o projeto seaport-service:
+
+```bash
+# execute o seguinte comando abaixo
+docker-compose up -d
+
+# caso precise recriar as imagens execute o comando abaixo
+docker-compose up --build --force-recreate
+```
